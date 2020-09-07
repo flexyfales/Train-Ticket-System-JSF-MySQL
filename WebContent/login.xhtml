@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+
+xmlns:h="http://java.sun.com/jsf/html"
+
+xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+
+
+>
+<body>
+<h:form>
+<div align="center">
+<h1>Login Page</h1>
+<hr></hr>
+<h:outputText value="Username"/>
+<h:inputText id="username" value="#{login.username}" required="true" requiredMessage="Username required"/>
+<br /><br/>
+<h:outputText value="Password"></h:outputText>
+<h:inputSecret id="password" value="#{login.password}" required="true" requiredMessage="Password required"/>
+<br/><br />
+
+
+<h:commandButton id="Submit" value="Login" action="#{login.validateLogin()}"/>
+</div>
+<hr></hr>
+</h:form>
+
+</body>
+</html>

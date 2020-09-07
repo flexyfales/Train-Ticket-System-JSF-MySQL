@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:c="http://java.sun.com/jsp/jstl/html"
+xmlns:h="http://java.sun.com/jsf/html"
+>
+
+<h:form>
+<h:panelGrid columns ="2">
+Id:
+<h:outputText value="#{editTicket.fares.id}"></h:outputText>
+From
+<h:inputText id="depart" value="#{editTicket.fares.depart}" required="true" requiredMessage="From  cannot be empty"/>
+
+To
+<h:inputText id="destination" value="#{editTicket.fares.destination}"  required="true" requiredMessage="To cannot be empty"/>
+
+
+Price
+<h:inputText  value="#{editTicket.fares.price}"  />
+
+
+Child
+<h:inputText  value="#{editTicket.fares.child}"/>
+
+
+
+
+</h:panelGrid>
+
+<h:message for="depart" style="color:red"></h:message>
+<h:message for="destination" style="color:red"></h:message>
+<h:message for="price" style="color:blue"></h:message>
+
+<h:commandButton value="Cancel" immediate="true" action="Fares.xhtml"/>
+<h:commandButton value="Update" style="margin-left:5px" action="#{editTicket.update()}"/>
+
+</h:form>
+
+</html>
+
+
+
+
+
+
+

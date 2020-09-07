@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:c="http://java.sun.com/jsp/jstl/html"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui"
+xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Ticketing</title>
+
+
+</head>
+<body>
+<h1 align="center">Train Ticket System</h1>
+<hr />
+
+<h:form>
+<h:panelGrid columns="4">
+<b>Class:</b><br/><h:selectOneRadio value="#{ticket.tclass}">
+<f:selectItem itemValue="FirstClass" itemLabel="FirstClass"/>
+<f:selectItem itemValue="Standard" itemLabel="Standard"/>
+<f:selectItem itemValue="Economy" itemLabel="Economy"/>
+
+</h:selectOneRadio>
+
+Ticket Type:<h:selectOneRadio value="#{ticket.tickettype}">
+<f:selectItem itemValue="Single" itemLabel="Single"/>
+<f:selectItem itemValue="Return" itemLabel="Return"/>
+
+</h:selectOneRadio>
+<b>Person:</b><br/><h:selectOneRadio value="#{ticket.person}">
+<f:selectItem itemValue="Adult" itemLabel="Adult"/>
+<f:selectItem itemValue="Child" itemLabel="Child"/>
+
+
+</h:selectOneRadio>
+ID No: <h:inputText/> Name: <h:inputText/> Surname: <h:inputText/>
+Address: <h:inputText/>
+Phone:<h:inputText/>
+From:<h:selectOneMenu value="#{ticket.from}">
+     <f:selectItem itemValue="Bulawayo" itemLabel="Bulawayo"/>
+      <f:selectItem itemValue="Harare" itemLabel="Harare"/>
+       <f:selectItem itemValue="Victoria Falls" itemLabel="Victoria Falls"/>
+        <f:selectItem itemValue="Masvingo" itemLabel="Masvingo"/>
+         <f:selectItem itemValue="Johannesburg" itemLabel="Johannesburg"/>
+  </h:selectOneMenu>
+
+To:<h:selectOneMenu value="#{ticket.to}">
+     <f:selectItem itemValue="Bulawayo" itemLabel="Bulawayo"/>
+      <f:selectItem itemValue="Harare" itemLabel="Harare"/>
+       <f:selectItem itemValue="Victoria Falls" itemLabel="Victoria Falls"/>
+        <f:selectItem itemValue="Masvingo" itemLabel="Masvingo"/>
+         <f:selectItem itemValue="Johannesburg" itemLabel="Johannesburg"/>
+  </h:selectOneMenu>
+</h:panelGrid>
+<hr/>
+<h:panelGrid columns="2">
+Sub Total: <h:outputText value="#{ticket.subtotal}"/>
+Tax: <h:outputText />
+Total: <h:outputText value="#{ticket.total}"/>
+
+</h:panelGrid>
+<hr/>
+<h:panelGrid columns="4">
+Class: <h:outputText value="#{ticket.tclass}"/>
+Ticket Type: <h:outputText value="#{ticket.tickettype}"/>
+Person: <h:outputText value="#{ticket.person}"/>
+
+From: <h:outputText value="#{ticket.from}"/>
+To: <h:outputText value="#{ticket.to}"/>
+Date: <h:outputText value="#{ticket.date}"/>
+Price:<h:outputText value="#{ticket.price}"/>
+
+Time: <h:outputText value="#{ticket.time}"/>
+Route <h:outputText value="ANY"/>
+</h:panelGrid>
+<hr/>
+<h:commandButton value="View Ticket" action="#{ticket.showPrice()}"/>
+<h:link>Purchase Ticket</h:link>
+
+</h:form>
+
+</body>
+</html>
